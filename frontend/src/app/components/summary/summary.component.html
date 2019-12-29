@@ -1,10 +1,9 @@
-<div class="mdl-card stock-card mdl-shadow--2dp" [ngClass]="{increase: isPositive(), decrease: isNegative()}" style="width: 100%;">     
+<div class="mdl-card bike-card mdl-shadow--2dp" style="width: 100%;">     
   <span>
       <div class="mdl-card__title">
         <h4 style="color: #fff; margin: 0">
-          {{bike?.name?.toUpperCase()}}<br />     
-          {{bike?.make}<br />     
-          {bike.make} - {bike.model}     
+          {{bike?.name?.toUpperCase()}}<br />         
+          {{bike.make?.toUpperCase()}} - {{bike.model?.toUpperCase()}}     
        </h4>
       </div>
   </span>

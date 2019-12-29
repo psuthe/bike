@@ -2,14 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from  'rxjs';
 
-
-
-export interface Bike {     
+export interface BikeInterface {     
   id: number; 
   riderId: number;    
-  name: string;     
-  description: string; 
+  name: string;      
   make: string;  
+  model: string;  
   sinceDate: Date; 
   totalFeet: number; 
   totalMiles: number;  
@@ -25,20 +23,20 @@ export class BikeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  loadBikes(riderId: number): Observable<Bike[]>{
-    return this.httpClient.get<Bike[]>(`${this.PHP_API_SERVER}/api/read.php/?riderId=${riderId}`);
+  loadBikes(riderId: number): Observable<BikeInterface[]>{
+    return this.httpClient.get<BikeInterface[]>(`${this.PHP_API_SERVER}/api/read.php/?riderId=${riderId}`);
   }
  
-  createBike(bike: Bike): Observable<Bike>{
-    return this.httpClient.post<Bike>(`${this.PHP_API_SERVER}/api/create.php`, bike);
+  createBike(bike: BikeInterface): Observable<BikeInterface>{
+    return this.httpClient.post<BikeInterface>(`${this.PHP_API_SERVER}/api/create.php`, bike);
   }
 
-  updateBike(bike: Bike){
-    return this.httpClient.put<Bike>(`${this.PHP_API_SERVER}/api/update.php`, bike);   
+  updateBike(bike: BikeInterface){
+    return this.httpClient.put<BikeInterface>(`${this.PHP_API_SERVER}/api/update.php`, bike);   
   }
 
   deleteBike(id: number){
-    return this.httpClient.delete<Bike>(`${this.PHP_API_SERVER}/api/delete.php/?id=${id}`);
+    return this.httpClient.delete<BikeInterface>(`${this.PHP_API_SERVER}/api/delete.php/?id=${id}`);
   }
 
 }
