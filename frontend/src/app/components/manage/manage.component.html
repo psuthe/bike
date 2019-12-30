@@ -1,0 +1,40 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col"></div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <form style="margin-bottom: 5px;"> 
+      <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class = "mdl-textfield__input" type = "text" [(ngModel)]="bike.name" name="name">
+        <label class = "mdl-textfield__label" for = "name">Name</label>
+      </div> 
+      <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class = "mdl-textfield__input" type = "text" [(ngModel)]="bike.make" name="make">
+        <label class = "mdl-textfield__label" for = "make">Make</label>
+      </div>   
+      <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class = "mdl-textfield__input" type = "text" [(ngModel)]="bike.model" name="model">
+        <label class = "mdl-textfield__label" for = "model">Model</label>
+      </div>   
+      <div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class = "mdl-textfield__input" type = "text" [(ngModel)]="bike.sinceDate" name="sinceDate">
+        <label class = "mdl-textfield__label" for = "sinceDate">Since</label>
+      </div>  
+
+      <!-- <input name="name" [(ngModel)]="bike.name" class="mdl-textfield__input" type="text" placeholder="Name" />      -->
+      <!-- <input name="make" [(ngModel)]="bike.make" class="mdl-textfield__input" type="text" placeholder="Make" />   -->
+      <!-- <input name="name" [(ngModel)]="bike.model" class="mdl-textfield__input" type="text" placeholder="Model" />   -->
+      <!-- <input name="name" [(ngModel)]="bike.sinceDate" class="mdl-textfield__input" type="text" placeholder="Since" />   -->
+      <button class="mdl-button" (click)="add()">Add</button>  
+    </form>
+    <table class="mdl-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;">
+      <tbody>
+        <tr *ngFor="let bike of bikes">     
+          <td class="mdl-data-table__cell--non-numeric">{{bike.name}}</td>     
+          <td style="padding-top: 6px;">
+            <button class="mdl-button" (click)="remove(bike.id)">Remove</button>     
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col"></div>
+</div>

@@ -10,12 +10,10 @@ import { BikeService, BikeInterface } from '../../services/bike.service';   �
 export class DashboardComponent implements OnInit {     
   bikes: Array<BikeInterface>;     
   rider: number = 1;     
-  constructor(private service: BikeService) {     
-    //this.symbols = service.get();     
+  constructor(private service: BikeService) {       
   }     
 
   ngOnInit() {     
-  //  this.service.load(this.symbols).subscribe(stocks => this.stocks = stocks); 
     this.service.loadBikes(this.rider).subscribe(bikes => {
       this.bikes = bikes;     
     });

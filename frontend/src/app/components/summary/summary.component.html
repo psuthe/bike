@@ -1,10 +1,26 @@
-<div class="mdl-card bike-card mdl-shadow--2dp" style="width: 100%;">     
+<div class="mdl-card bike-card mdl-shadow--16dp" style="width: 100%;">     
   <span>
       <div class="mdl-card__title">
-        <h4 style="color: #fff; margin: 0">
-          {{bike?.name?.toUpperCase()}}<br />         
-          {{bike.make?.toUpperCase()}} - {{bike.model?.toUpperCase()}}     
-       </h4>
+        <h5 style="color: #fff; margin: 0">
+          {{bike.name.trim()}}
+          <div class = "mdl-card__supporting-text">
+            <tr>
+              <td style="color: #fff;">
+                {{bike.make.toUpperCase()}}-{{bike.model.toUpperCase()}} 
+              </td>
+            </tr>
+            <tr>
+              <td style="color: #fff;">
+                YTD-FT: 10,175
+              </td>
+            </tr>
+            <tr>
+              <td style="color: #fff;">
+                YTD-MI: 250
+              </td>
+            </tr>
+          </div>  
+       </h5>
       </div>
   </span>
  </div>
